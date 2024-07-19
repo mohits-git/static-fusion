@@ -1,5 +1,5 @@
 import unittest
-from leafnode import LeafNode
+from app.leafnode import LeafNode
 
 
 class TestLeafNode(unittest.TestCase):
@@ -14,3 +14,7 @@ class TestLeafNode(unittest.TestCase):
         print('-------------TEST LeafNode - to_html() [for plain text] ---------------')
         print(node2.to_html())
         print('------------------------------------------------------')
+
+
+if __name__ == "__main__":
+    unittest.main()

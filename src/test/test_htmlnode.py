@@ -1,5 +1,5 @@
 import unittest
-from htmlnode import HTMLNode
+from app.htmlnode import HTMLNode
 
 
 class TestHTMLNode(unittest.TestCase):
@@ -32,6 +32,7 @@ class TestHTMLNode(unittest.TestCase):
         })
         print('-------------TEST HTMLNode - [__repr__()]------------------')
         print(node1.__repr__())
+        print('--------------------------------------------------------------')
         print(node2.__repr__())
         print('--------------------------------------------------------------')
 
@@ -49,3 +50,7 @@ class TestHTMLNode(unittest.TestCase):
         print('-------------TEST HTMLNode - [With Children]------------------')
         print(node3.__repr__())
         print('--------------------------------------------------------------')
+
+
+if __name__ == "__main__":
+    unittest.main()
