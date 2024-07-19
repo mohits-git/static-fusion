@@ -2,7 +2,7 @@ import unittest
 from htmlnode import HTMLNode
 
 
-class TextHTMLNode(unittest.TestCase):
+class TestHTMLNode(unittest.TestCase):
     def test_eq(self):
         props = {
             "class": "text-2xl"
@@ -30,8 +30,10 @@ class TextHTMLNode(unittest.TestCase):
             "href": "http://localhost:3000",
             "class": "text-2xl"
         })
+        print('-------------TEST HTMLNode - [__repr__()]------------------')
         print(node1.__repr__())
         print(node2.__repr__())
+        print('--------------------------------------------------------------')
 
     def test_withchildren(self):
         node1 = HTMLNode("p", "this is a paragraph", None, {
@@ -44,4 +46,6 @@ class TextHTMLNode(unittest.TestCase):
         node3 = HTMLNode("div", None, [node1, node2], {
             "class": "flex items-center justify-center"
         })
+        print('-------------TEST HTMLNode - [With Children]------------------')
         print(node3.__repr__())
+        print('--------------------------------------------------------------')
