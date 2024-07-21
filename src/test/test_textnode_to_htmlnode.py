@@ -38,11 +38,11 @@ class TestTextNodeToHTMLNode(unittest.TestCase):
         self.assertEqual(htmlnode, expected_htmlnode)
 
     def test_image(self):
-        textnode = TextNode(None, 'image', 'public/dog.png')
+        textnode = TextNode("A dog image", 'image', 'public/dog.png')
         htmlnode = text_node_to_html_node(textnode)
         expected_htmlnode = LeafNode(None, 'img', {
             'src': 'public/dog.png',
-            'alt': 'image',
+            'alt': 'A dog image',
         })
         self.assertEqual(htmlnode, expected_htmlnode)
 
