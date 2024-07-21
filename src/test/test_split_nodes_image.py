@@ -21,7 +21,8 @@ class TestSplitNodesLink(unittest.TestCase):
                 "https://www.mohits.site"
             ),
         ]
-        self.assertEqual(new_nodes, expected_nodes)
+        self.assertEqual(new_nodes, expected_nodes,
+                         "Split Nodes Images Test failed")
 
     def test_markdown_multiple_images(self):
         old_nodes = [
@@ -46,4 +47,5 @@ class TestSplitNodesLink(unittest.TestCase):
             TextNode("twitter", text_type.image.name,
                      "https://www.x.com/mohits_twt")
         ]
-        self.assertEqual(new_nodes, expected_nodes)
+        self.assertEqual(new_nodes, expected_nodes,
+                         "Split Nodes Images Test failed")

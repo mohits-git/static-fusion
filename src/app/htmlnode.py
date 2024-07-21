@@ -37,7 +37,8 @@ class HTMLNode:
             html_node_str += self.value
         if self.children is not None:
             for child in self.children:
-                html_node_str += f'\n{child.__repr__()}\n'
+                html_node_str += f'\n{child.__repr__()}'
+            html_node_str += '\n'
         if self.tag is not None:
             html_node_str += f"<{'/'}{self.tag}>"
         return html_node_str

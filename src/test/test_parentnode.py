@@ -12,9 +12,9 @@ class TestParentNode(unittest.TestCase):
         ], {
             "class": "flex items-center, justify-center"
         })
-        print("----------------TEST PARENT NODE--------------")
-        print(node1.to_html())
-        print("----------------------------------------------")
+        expected_str = '<div class="flex items-center, justify-center">\n<p class="test-sm">This is para</p>\n<a class="test-sm">This is anchor</a>\nThis is just text\n</div>'
+        self.assertEqual(node1.to_html(), expected_str,
+                         "ParentNode test failed")
 
     def test_parent_with_parent(self):
         node1 = ParentNode("div", [
@@ -33,9 +33,9 @@ class TestParentNode(unittest.TestCase):
             node1,
             node2
         ])
-        print("----------------TEST PARENT NODE--------------")
-        print(node3.to_html())
-        print("---------------------------------------------")
+        expected_str = '<div>\n<div class="flex items-center, justify-center">\n<p class="test-sm">This is para</p>\n<a class="test-sm">This is anchor</a>\nThis is just text\n</div>\n<span class="flex items-center, justify-center">\n<a class="test-sm">This is anchor</a>\n</span>\n</div>'
+        self.assertEqual(node3.to_html(), expected_str,
+                         "ParentNode test failed")
 
     def test_parent_no_tag(self):
         node1 = ParentNode(None, [], None)

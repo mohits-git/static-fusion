@@ -15,9 +15,11 @@ class TestSplitNodesLink(unittest.TestCase):
         new_nodes = split_nodes_link(old_nodes)
         expected_nodes = [
             TextNode("hello this is my ", text_type.text.name),
-            TextNode("portfolio", text_type.link.name, "https://www.mohits.site"),
+            TextNode("portfolio", text_type.link.name,
+                     "https://www.mohits.site"),
         ]
-        self.assertEqual(new_nodes, expected_nodes)
+        self.assertEqual(new_nodes, expected_nodes,
+                         "Split Nodes Links Test failed")
 
     def test_markdown_multiple_links(self):
         old_nodes = [
@@ -33,10 +35,14 @@ class TestSplitNodesLink(unittest.TestCase):
         new_nodes = split_nodes_link(old_nodes)
         expected_nodes = [
             TextNode("hello this is my ", text_type.text.name),
-            TextNode("portfolio", text_type.link.name, "https://www.mohits.site"),
+            TextNode("portfolio", text_type.link.name,
+                     "https://www.mohits.site"),
             TextNode("hello this is my ", text_type.text.name),
-            TextNode("portfolio", text_type.link.name, "https://www.mohits.site"),
+            TextNode("portfolio", text_type.link.name,
+                     "https://www.mohits.site"),
             TextNode(" and this is my ", text_type.text.name),
-            TextNode("twitter", text_type.link.name, "https://www.x.com/mohits_twt")
+            TextNode("twitter", text_type.link.name,
+                     "https://www.x.com/mohits_twt")
         ]
-        self.assertEqual(new_nodes, expected_nodes)
+        self.assertEqual(new_nodes, expected_nodes,
+                         "Split Nodes Links Test failed")
