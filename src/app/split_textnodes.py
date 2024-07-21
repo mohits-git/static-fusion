@@ -18,9 +18,7 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
                 new_nodes.append(TextNode(split_text[i], TextType.text.name))
             if i+1 < len(split_text) and len(split_text[i+1]) > 0:
                 new_nodes.append(TextNode(split_text[i+1], text_type))
-            if i+2 < len(split_text) and len(split_text[i+2]) > 0:
-                new_nodes.append(TextNode(split_text[i+2], TextType.text.name))
-            i += 3
+            i += 2
     return new_nodes
 
 

@@ -82,3 +82,23 @@ class TestSplitNodesDelimiter(unittest.TestCase):
             TextNode('bold text it is', text_type.bold.name),
         ]
         self.assertEqual(new_nodes, expected_nodes)
+
+    def test_multiple_splits(self):
+        old_nodes = [
+            TextNode('holla this is **bold** and **another bold** text', text_type.text.name),
+            TextNode('This is mofkin **BOLD** text', text_type.text.name),
+            TextNode('**bold text it is**', text_type.bold.name),
+        ]
+        new_nodes = split_nodes_delimiter(old_nodes, "**", text_type.bold.name)
+        expected_nodes = [
+            TextNode('holla this is ', text_type.text.name),
+            TextNode('bold', text_type.bold.name),
+            TextNode(' and ', text_type.text.name),
+            TextNode('another bold', text_type.bold.name),
+            TextNode(' text', text_type.text.name),
+            TextNode('This is mofkin ', text_type.text.name),
+            TextNode('BOLD', text_type.bold.name),
+            TextNode(' text', text_type.text.name),
+            TextNode('**bold text it is**', text_type.bold.name),
+        ]
+        self.assertEqual(new_nodes, expected_nodes)
