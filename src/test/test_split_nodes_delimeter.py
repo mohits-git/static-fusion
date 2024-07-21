@@ -1,5 +1,5 @@
 import unittest
-from app.split_nodes_delimiter import split_nodes_delimiter
+from app.split_textnodes import split_nodes_delimiter
 from app.textnode import TextNode
 
 
