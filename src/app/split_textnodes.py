@@ -25,7 +25,7 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
 def split_nodes_link(old_nodes):
     new_nodes = []
     for node in old_nodes:
-        if node.text_type != "link":
+        if node.text_type != "text":
             new_nodes.append(node)
             continue
         text = node.text
@@ -42,7 +42,7 @@ def split_nodes_link(old_nodes):
 def split_nodes_image(old_nodes):
     new_nodes = []
     for node in old_nodes:
-        if node.text_type != "image":
+        if node.text_type != "text":
             new_nodes.append(node)
             continue
         text = node.text
