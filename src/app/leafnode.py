@@ -11,8 +11,8 @@ class LeafNode(HTMLNode):
         html_node_str = ""
         if self.tag is not None:
             html_node_str += f"<{self.tag}"
-        html_node_str += self.props_to_html()
-        html_node_str += ">"
+            html_node_str += self.props_to_html()
+            html_node_str += ">"
         html_node_str += str(self.value)
         if self.tag is not None:
             html_node_str += f"<{'/'}{self.tag}>"
