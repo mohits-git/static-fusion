@@ -1,7 +1,7 @@
 import unittest
 
 from app.text_to_textnodes import text_to_textnodes
-from app.text_type import text_type
+from app.types import text_type
 from app.textnode import TextNode
 
 

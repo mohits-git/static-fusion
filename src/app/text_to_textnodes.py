@@ -1,5 +1,5 @@
 from app.textnode import TextNode
-from app.text_type import text_type
+from app.types import text_type
 from app.split_textnodes import (
     split_nodes_delimiter,
     split_nodes_image,
