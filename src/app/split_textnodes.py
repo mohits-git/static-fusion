@@ -1,6 +1,6 @@
 from app.extract_links import extract_markdown_images, extract_markdown_links
 from app.textnode import TextNode
-from app.types import text_type as TextType
+from app.custom_types import text_type as TextType
 
 
 def split_nodes_delimiter(old_nodes, delimiter, text_type):
