@@ -14,7 +14,7 @@ def text_node_to_html_node(text_node):
         case "link":
             return LeafNode(text_node.text, "a", {"href": text_node.url})
         case "image":
-            return LeafNode(None, "img", {
+            return LeafNode(text_node.text, "img", {
                 "src": text_node.url,
                 "alt": text_node.text
             })

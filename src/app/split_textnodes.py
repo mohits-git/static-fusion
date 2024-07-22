@@ -38,7 +38,7 @@ def split_nodes_link(old_nodes):
                 new_nodes.append(TextNode(split_text[0], TextType.text.name))
             new_nodes.append(TextNode(link[0], TextType.link.name, link[1]))
             text = split_text[1]
-        if len(all_links) > 0 and text != '':
+        if len(all_links) > 0 and text != '' and text is not None:
             new_nodes.append(TextNode(text, TextType.text.name))
     return new_nodes
 
@@ -53,12 +53,13 @@ def split_nodes_image(old_nodes):
         all_images = extract_markdown_images(text)
         if len(all_images) == 0:
             new_nodes.append(node)
+            continue
         for image in all_images:
             split_text = text.split(f"![{image[0]}]({image[1]})", 1)
             if len(split_text[0]) != 0:
                 new_nodes.append(TextNode(split_text[0], TextType.text.name))
             new_nodes.append(TextNode(image[0], TextType.image.name, image[1]))
             text = split_text[1]
-        if len(all_images) > 0 and text != '':
+        if len(all_images) > 0 and text != '' and text is not None:
             new_nodes.append(TextNode(text, TextType.text.name))
     return new_nodes
