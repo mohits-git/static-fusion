@@ -15,7 +15,8 @@ class ParentNode(HTMLNode):
         if self.children is None or len(self.children) == 0:
             raise ValueError("Parent HTMl tag children are need.")
         for child in self.children:
-            html_node_str += f'\n{child.to_html()}'
+            if child is not None:
+                html_node_str += f'\n{child.to_html()}'
         html_node_str += '\n'
         if self.tag is not None:
             html_node_str += f"<{'/'}{self.tag}>"
