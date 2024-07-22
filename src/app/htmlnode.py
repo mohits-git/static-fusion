@@ -32,6 +32,9 @@ class HTMLNode:
         if self.tag is not None:
             html_node_str += f"<{self.tag}"
             html_node_str += self.props_to_html()
+            if self.tag == 'img':
+                html_node_str += "/>"
+                return html_node_str
             html_node_str += ">"
         if self.value is not None:
             html_node_str += self.value

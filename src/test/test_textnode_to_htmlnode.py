@@ -45,7 +45,7 @@ class TestTextNodeToHTMLNode(unittest.TestCase):
     def test_image(self):
         textnode = TextNode("A dog image", 'image', 'public/dog.png')
         htmlnode = text_node_to_html_node(textnode)
-        expected_htmlnode = LeafNode(None, 'img', {
+        expected_htmlnode = LeafNode('A dog image', 'img', {
             'src': 'public/dog.png',
             'alt': 'A dog image',
         })
