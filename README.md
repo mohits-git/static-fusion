@@ -32,3 +32,8 @@ Run at the root of the project:
 ```
 
 > **Note**:- I didn't add the support for inline nested markdown (eg. \* italic and \*\*bold\*\* \*). I might add this feature in future. If you want to contribute to the project feel free to open a pull request ^_^
+
+### Demo:
+
+https://github.com/user-attachments/assets/b522bdfb-10e4-4b26-b29e-8a0d7e44638f
+
